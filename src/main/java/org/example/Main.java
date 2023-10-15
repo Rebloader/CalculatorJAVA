@@ -9,8 +9,16 @@ public class Main {
         Logging logger = new CalculatorLogger(Main.class);
         calculator = new DivisionDecorator(calculator, logger);
 
-        ComplexNumber num1 = new ConcreteComplexNumber(3, 4);
-        ComplexNumber num2 = new ConcreteComplexNumber(1, 2);
+        Scanner scanner = new Scanner(System.in);
+
+        int realNum1 = scanner.nextInt();
+        int imagNum1 = scanner.nextInt();
+        int realNum2 = scanner.nextInt();
+        int imagNum2 = scanner.nextInt();
+        
+
+        ComplexNumber num1 = new ConcreteComplexNumber(realNum1, imagNum1);
+        ComplexNumber num2 = new ConcreteComplexNumber(realNum2, imagNum2);
 
         ComplexNumber result = calculator.division(num1, num2);
         System.out.println("Result division: " + result);
